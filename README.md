@@ -123,6 +123,9 @@ If tests are available, run:
 ```bash
 php artisan test
 ```
+Here is the local run sample.
+<img width="1536" height="618" alt="image" src="https://github.com/user-attachments/assets/529059c5-adcb-4a3e-bb86-dba6c3df38e1" />
+
 
 ---
 
