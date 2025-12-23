@@ -1,5 +1,3 @@
-Here is the **complete `README.md` file** content. You can copy-paste this directly into your repository.
-
 ````md
 # Courier Delivery Cost Calculator (Laravel)
 
@@ -147,13 +145,4 @@ php artisan test
 
 This project is licensed under the MIT License.
 
-```
-
-If you want, I can also:
-- Reduce it to a **minimal README**
-- Add **example output**
-- Add **Docker instructions**
-- Customize it for **GitHub / GitLab**
-
-Just let me know 👍
 ```
