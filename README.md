@@ -1,59 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Here is the **complete `README.md` file** content. You can copy-paste this directly into your repository.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+````md
+# Courier Delivery Cost Calculator (Laravel)
 
-## About Laravel
+This repository contains a Laravel-based command-line application to calculate courier delivery costs.  
+It supports calculation via direct command-line arguments as well as JSON file input.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📦 Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ensure the following are installed on your system:
 
-## Learning Laravel
+- PHP >= 8.0
+- Composer
+- Laravel environment
+- Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Installation & Setup
 
-## Laravel Sponsors
+Follow these steps to set up the project locally.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Step 1: Clone the Repository
+```bash
+git clone <repository-url>
+cd <project-directory>
+````
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Step 2: Install Composer Dependencies
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+### Step 3: Environment Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Rename the sample environment file:
 
-## Security Vulnerabilities
+```bash
+cp .env.sample .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Generate the application key:
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🧮 Usage
+
+### Command 1: Calculate Courier Delivery Cost via CLI Parameters
+
+Use this command to calculate the delivery cost by passing values directly.
+
+```bash
+php artisan app:calculate-courier-delivery-cost \
+--baseCost=100 \
+--weight=10 \
+--distance=100 \
+--offerCode=OFR003
+```
+
+#### Parameters:
+
+| Parameter   | Description                  |
+| ----------- | ---------------------------- |
+| `baseCost`  | Base delivery cost           |
+| `weight`    | Weight of the package        |
+| `distance`  | Delivery distance            |
+| `offerCode` | Optional discount offer code |
+
+---
+
+### Command 2: Calculate Courier Delivery Cost Using JSON File
+
+Use this command to calculate delivery costs from a JSON input file.
+
+```bash
+php artisan courier:calculate --file=input.json
+```
+
+#### Notes:
+
+* The JSON file must exist in the project root or a valid path must be provided.
+* This command is useful for processing multiple packages at once.
+
+---
+
+## 📄 Sample `input.json`
+
+```json
+{
+  "baseCost": 100,
+  "packages": [
+    {
+      "id": "PKG1",
+      "weight": 5,
+      "distance": 50,
+      "offerCode": "OFR001"
+    },
+    {
+      "id": "PKG2",
+      "weight": 10,
+      "distance": 100,
+      "offerCode": "OFR003"
+    }
+  ]
+}
+```
+
+---
+
+## 🧪 Running Tests (Optional)
+
+If tests are available, run:
+
+```bash
+php artisan test
+```
+
+---
+
+## ℹ️ Notes
+
+* Ensure `.env` configuration is correct before running commands.
+* Offer codes are validated internally.
+* This project is intended for CLI usage only.
+
+---
+
+## 👨‍💻 Author
+
+**Krunal Palaniya**
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+```
+
+If you want, I can also:
+- Reduce it to a **minimal README**
+- Add **example output**
+- Add **Docker instructions**
+- Customize it for **GitHub / GitLab**
+
+Just let me know 👍
+```
