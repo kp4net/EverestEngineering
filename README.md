@@ -1,4 +1,3 @@
-````md
 # Courier Delivery Cost Calculator (Laravel)
 
 This repository contains a Laravel-based command-line application to calculate courier delivery costs.  
